@@ -1,18 +1,22 @@
-const mongoose = require("mongoose");
+// config/db.js
 
-const uri = 'mongodb://localhost:27017/DB'; // Change this if needed
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const connectDB = async () => {
     try {
-        await mongoose.connect(uri, {
+        await mongoose.connect(process.env.MONGODB_URI, {
             useNewUrlParser: true,
-            useUnifiedTopology: true,
+            useUnifiedTopology: true
         });
-        console.log("Connected to MongoDB!");
+        console.log("MongoDB connected...");
     } catch (err) {
-        console.error("Could not connect to MongoDB:", err);
-        process.exit(1); // Exit the process with failure
+        console.error(err);
+        process.exit(1); // Exit process with failure
     }
 };
 
-module.exports = connectDB;
+// Export connectDB as the default export
+export default connectDB;
