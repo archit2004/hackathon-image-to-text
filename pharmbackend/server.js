@@ -1,7 +1,7 @@
-// Initializing modules
-const express = require("express");
-const cors = require("cors");
-const connectDB = require("./config/db"); // Make sure the path is correct
+// Importing modules using ES module syntax
+import express from 'express';
+import cors from 'cors';
+import connectDB from './config/db.js'; // Note the .js extension
 
 // Initializing express
 const app = express();
