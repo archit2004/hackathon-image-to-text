@@ -1,0 +1,192 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Navbar styles */
+.navbar-nav .nav-link {
+    font-size: 1.75rem; /* Increased font size */
+    padding: 0.75rem 1.5rem; /* Increase padding for spacing */
+}
+
+.navbar .btn {
+    font-size: 1.5rem; /* Increased font size for buttons */
+    padding: 0.5rem 1.5rem; /* Adjust padding for buttons */
+}
+
+/* Logo and Website Name */
+.navbar-brand img {
+    width: 100px; /* Increased logo size */
+    height: auto;
+}
+
+.navbar-brand h1 {
+    font-size: 2rem; /* Increased font size for website name */
+}
+
+/* Hero Section Styles */
+.hero {
+    position: relative;
+    z-index: 1;
+    padding: 80px 0; /* Increased padding */
+}
+
+.hero .scrolling-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.hero .scrolling-images {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    animation: scroll-images 10s linear infinite;
+}
+
+.hero .scrolling-images img {
+    opacity: 0.5;
+    width: 30%; /* Increased width of images */
+    height: auto;
+}
+
+@keyframes scroll-images {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+h1, h2, h5 {
+    font-weight: bold;
+}
+
+.card-title {
+    color: #007bff;
+}
+
+/* Hover effect on card */
+.card:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Hover effect on collage images */
+.img-fluid:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Adjusting medicine image size */
+.carousel-item img {
+    height: 250px;
+    object-fit: cover;
+}
+
+/* Adjusting spacing for buttons and form */
+.navbar .d-flex {
+    align-items: center;
+}
+
+/* Search bar styling */
+.form-control {
+    font-size: 1.2rem; /* Increased font size for search bar */
+}
+/* Services Section */
+#service {
+    background-color: #f9f9f9;
+    padding: 60px 0;
+}
+
+#service .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#service h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+#service .card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+#service .card:hover {
+    transform: translateY(-10px);
+}
+
+#service .card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 200px;
+    object-fit: cover;
+}
+
+#service .card-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #007bff;
+}
+
+#service .card-text {
+    font-size: 16px;
+    color: #555;
+}
+/* Sub Services Section */
+.service-card {
+    background: url('./img/service-bg.jpg') no-repeat center center;
+    background-size: cover;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.icon-container {
+    background-color: rgba(0, 123, 255, 0.8);
+    border-radius: 50%;
+    padding: 10px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.service-icon {
+    font-size: 40px;
+    color: white;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.card-text {
+    font-size: 16px;
+}
+
+.testimonial-blockquote {
+    border-left: 4px solid #007bff;
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+    color: white;
+    font-style: italic;
+    background-color: grey;
+    border-radius: 10%;
+}

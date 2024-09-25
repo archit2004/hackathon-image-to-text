@@ -1,0 +1,25 @@
+:root {
+    --header-height: 160px;
+    --header-height-min: 80px;
+  }
+  @media screen and (max-width: 600px) {
+    :root {
+      --header-height: 100px;
+      --header-height-min: 80px;
+    }
+  }
+  :root {
+    --accent-color: #DEAD6F;
+    --dark-color: #222222;
+    --light-dark-color: #727272;
+    --light-color: #fff;
+    --grey-color: #dbdbdb;
+    --light-grey-color: #fafafa;
+    --primary-color: #6995B1;
+    --light-primary-color: #eef1f3;
+  }
+  :root {
+    --body-font: 'Chilanka', cursive;
+    --heading-font: 'Chilanka', cursive;
+    --secondary-font: 'Montserrat', sans-serif;
+  }

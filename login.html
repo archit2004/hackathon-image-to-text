@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login Page</title>
+
+  <!-- External Styles (You can also create a separate CSS file) -->
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-image: url('./img/login pg ki img.jpg'); /* Replace with your image path */
+      background-size: 100% 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed; /* Ensures the background image doesn't scroll with the content */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .loginPageWrapper {
+      background-color: rgba(255, 255, 255, 0.9); /* Slight transparency to see the background */
+      padding: 20px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .formHeader {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .formSubHeader {
+      font-size: 14px;
+      color: #666;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .formMainContainer {
+      margin-bottom: 20px;
+    }
+
+    .formInput {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .buttonContainer {
+      text-align: center;
+    }
+
+    .loginInBtn {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .loginInBtn:disabled {
+      background-color: #ccc;
+    }
+
+    .socialIconsFooter {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+
+    .socialLoginIcon img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .registerLink {
+      text-align: center;
+    }
+
+    .redirectLink {
+      color: #007bff;
+      cursor: pointer;
+    }
+
+    .redirectLink:hover {
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="loginPageWrapper">
+    <div class="formHeader">Login to Veterinary</div>
+    <div class="formSubHeader">Please enter your credentials to continue.</div>
+
+    <div class="formMainContainer">
+      <input type="text" name="userName" class="formInput" placeholder="Enter email or mobile number">
+      <input type="password" name="password" class="formInput" placeholder="Enter your password">
+    </div>
+
+    <div class="buttonContainer">
+      <button type="button" class="loginInBtn">Login</button>
+    </div>
+
+    <div class="registerLink">
+        <span>New to this site?</span> <a href="signup.html" class="redirectLink">SignUp</a>
+    </div>
+  </div>
+
+</body>
+</html>
