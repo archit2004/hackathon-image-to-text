@@ -1,244 +1,437 @@
-<!DOCTYPE html>
-<html lang="en">
+  <!DOCTYPE html>
+  <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Veterinary</title>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Veterinary</title>
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style2.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
 
-  <!-- Optional Bootstrap Icons (For Cart Icon) -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style2.css">
 
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f4f4f9;
-      color: #333;
-    }
+    <!-- Optional Bootstrap Icons (For Cart Icon) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
-    .carousel-item img {
-      width: 100%;
-      height: 500px;
-      object-fit: cover;
-    }
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+      }
 
-    .carousel {
-      max-width: 100%;
-      height: 700px;
-      margin: 0 auto;
-    }
+      .carousel-item img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+      }
 
-    .carousel-indicators [data-bs-target] {
-      background-color: #333;
-    }
+      .carousel {
+        max-width: 100%;
+        height: 700px;
+        margin: 0 auto;
+      }
 
-    .navbar-nav .nav-link {
-      font-size: 1.5rem;
-      padding: 0.75rem 1.5rem;
-    }
+      .carousel-indicators [data-bs-target] {
+        background-color: #333;
+      }
 
-    .navbar .btn {
-      font-size: 1.2rem;
-      padding: 0.5rem 1.5rem;
-    }
+      .navbar-nav .nav-link {
+        font-size: 1.5rem;
+        padding: 0.75rem 1.5rem;
+      }
 
-    .hero {
-      position: relative;
-      z-index: 1;
-    }
+      .navbar .btn {
+        font-size: 1.2rem;
+        padding: 0.5rem 1.5rem;
+      }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5); /* Fade effect */
-      z-index: 0;
-    }
+      .hero {
+        position: relative;
+        z-index: 1;
+      }
 
-    .hero h1 {
-      position: relative;
-      z-index: 1;
-      color: #fff; /* White text for contrast */
-      font-weight: bold;
-    }
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Fade effect */
+        z-index: 0;
+      }
 
-    h2, h5 {
-      font-weight: bold;
-      color: #007bff; /* Adjust color for headers */
-    }
+      .hero h1 {
+        position: relative;
+        z-index: 1;
+        color: #fff; /* White text for contrast */
+        font-weight: bold;
+      }
 
-    .card-title {
-      color: #007bff;
-    }
+      h2,
+      h5 {
+        font-weight: bold;
+        color: #007bff; /* Adjust color for headers */
+      }
 
-    footer {
-      background-color: #333;
-      color: white;
-    }
+      .card-title {
+        color: #007bff;
+      }
 
-    .card:hover {
-      transform: scale(1.05);
-      transition: transform 0.2s ease-in-out;
-    }
+      footer {
+        background-color: #333;
+        color: white;
+      }
 
-    .img-fluid:hover {
-      transform: scale(1.1);
-      transition: transform 0.2s ease-in-out;
-    }
+      .card:hover {
+        transform: scale(1.05);
+        transition: transform 0.2s ease-in-out;
+      }
 
-    .navbar .d-flex {
-      align-items: center;
-    }
+      .img-fluid:hover {
+        transform: scale(1.1);
+        transition: transform 0.2s ease-in-out;
+      }
 
-    .form-control {
-      font-size: 1.2rem;
-    }
-  </style>
-</head>
+      .navbar .d-flex {
+        align-items: center;
+      }
 
-<body>
-  <!-- Navbar Section -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
-    <div class="container">
-      <!-- Logo and Website Name -->
-      <a class="navbar-brand d-flex align-items-center" href="#">
-        <img src="./img/FINALWEBLOGO.png" alt="Logo" width="80" height="65" class="me-2">
-        <h1 class="mb-0 fs-4">Paws & Claws</h1>
-      </a>
+      .form-control {
+        font-size: 1.2rem;
+      }
+    </style>
+  </head>
 
-      <!-- Toggler for mobile view -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <body>
+    <!-- Navbar Section -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
+      <div class="container">
+        <!-- Logo and Website Name -->
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="./img/FINALWEBLOGO.png" alt="Logo" width="80" height="65" class="me-2">
+          <h1 class="mb-0 fs-4">Paws & Claws.</h1>
+        </a>
 
-      <!-- Navbar Links and Search -->
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto fs-5">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-        </ul>
-        <div class="ms-auto d-flex">
-          <a href="login.html" class="me-2"><button class="btn btn-primary">Login</button></a>
-          <a href="signup.html"><button class="btn btn-secondary">Signup</button></a>
-        </div>
-        <form class="d-flex ms-3">
-          <input class="form-control me-2" type="search" id="search" placeholder="Search products..." aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </div>
-  </nav>
+        <!-- Toggler for mobile view -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-  <!-- Hero Section with Auto-scrolling Carousel -->
-  <section class="hero text-center">
-    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000"> <!-- Auto-scroll interval set to 3 seconds -->
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="./img/1280.jpg" class="d-block w-100" alt="Pet Image 1">
-          <div class="carousel-caption d-none d-md-block">
-            <h1>Welcome to Paws & Claws!</h1>
-            <p>Your trusted veterinary care provider</p>
+        <!-- Navbar Links and Search -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto fs-5">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+          <div class="ms-auto d-flex">
+            <a href="login.html" class="me-2"><button class="btn btn-primary">Login</button></a>
+            <a href="signup.html"><button class="btn btn-secondary">Signup</button></a>
           </div>
-        </div>
-        <div class="carousel-item">
-          <img src="https://source.unsplash.com/1280x854/?dog,cat" class="d-block w-100" alt="Pet Image 2">
-          <div class="carousel-caption d-none d-md-block">
-            <h1>Care for Your Pets</h1>
-            <p>We provide expert medical services</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="https://source.unsplash.com/1280x854/?veterinary,care" class="d-block w-100" alt="Pet Image 3">
-          <div class="carousel-caption d-none d-md-block">
-            <h1>Health & Wellness</h1>
-            <p>Comprehensive care for your beloved pets</p>
-          </div>
+          <form class="d-flex ms-3">
+            <input class="form-control me-2" type="search" id="search" placeholder="Search products..." aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
         </div>
       </div>
-      <!-- Controls for next and previous -->
-      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </a>
-    </div>
-  </section>
+    </nav>
 
-  <!-- Our Beloved Animals Section -->
-  <section class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-5">Our Beloved Animals</h2>
-
-      <!-- Collage of Animals -->
-      <div class="row text-center mb-5">
-        <div class="col-md-3"><img src="./img/logo1.png" alt="Dog 1" class="img-fluid" height="30" width="150"></div>
-        <div class="col-md-3"><img src="./img/logo2.png" alt="Dog 2" class="img-fluid" height="30" width="150"></div>
-        <div class="col-md-3"><img src="./img/logo3.jpeg" alt="Dog 3" class="img-fluid" height="30" width="150"></div>
-        <div class="col-md-3"><img src="./img/logo4.png" alt="Dog 4" class="img-fluid" height="30" width="150"></div>
-      </div>
-
-      <!-- Row of dog medicines with arrows for scrolling -->
-      <h2 class="text-center mb-5">Dog Medicines</h2>
-      <div id="medicineCarousel" class="carousel slide" data-bs-ride="carousel">
+    <!-- Hero Section with Auto-scrolling Carousel -->
+    <section class="hero text-center">
+      <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000"> <!-- Auto-scroll interval set to 3 seconds -->
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <div class="row">
-              <div class="col-md-4">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRCNCPJj1sH-YIeanbi0Iy_PQ4Nt1hCnh_RA&s" class="d-block w-100" alt="Medicine 1">
+            <img src="." class="d-block w-100" alt="Pet Image 1">
+            <div class="carousel-caption d-none d-md-block">
+              <h1>Welcome to Paws & Claws!</h1>
+              <p>Your trusted veterinary care provider</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://source.unsplash.com/1280x854/?dog,cat" class="d-block w-100" alt="Pet Image 2">
+            <div class="carousel-caption d-none d-md-block">
+              <h1>Care for Your Pets</h1>
+              <p>We provide expert medical services</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://source.unsplash.com/1280x854/?veterinary,care" class="d-block w-100" alt="Pet Image 3">
+            <div class="carousel-caption d-none d-md-block">
+              <h1>Health & Wellness</h1>
+              <p>Comprehensive care for your beloved pets</p>
+            </div>
+          </div>
+        </div>
+        <!-- Controls for next and previous -->
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Our Beloved Animals Section -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">Our Beloved Animals</h2>
+
+        <!-- Collage of Animals -->
+        <div class="row text-center mb-5">
+          <div class="col-md-3"><img src="./img/logo1.png" alt="Dog 1" class="img-fluid" height="30" width="150"></div>
+          <div class="col-md-3"><img src="./img/logo2.png" alt="Dog 2" class="img-fluid" height="30" width="150"></div>
+          <div class="col-md-3"><img src="./img/logo3.jpeg" alt="Dog 3" class="img-fluid" height="30" width="150"></div>
+          <div class="col-md-3"><img src="./img/logo4.png" alt="Dog 4" class="img-fluid" height="30" width="150"></div>
+        </div>
+
+        <!-- Row of dog medicines with arrows for scrolling -->
+        <h2 class="text-center mb-5">Dog Medicines</h2>
+        <div id="medicineCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col-md-4">
+                  <img src="./img/med1.jpeg" class="d-block w-100" alt="Medicine 1">
+                </div>
+                <div class="col-md-4">
+                  <img src="./img/med2.jpeg" class="d-block w-100" alt="Medicine 2">
+                </div>
+                <div class="col-md-4">
+                  <img src="./img/med4.jpg" class="d-block w-100" alt="Medicine 3">
+                </div>
               </div>
-              <div class="col-md-4">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU6Q8o0uoHFyGZYtJM8DIpQ6f0zc-8IzpAWQ&s" class="d-block w-100" alt="Medicine 2">
-              </div>
-              <div class="col-md-4">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyUqxH1poWXzCfa7SlPHs2DWcJ_ay6XZTX_g&s" class="d-block w-100" alt="Medicine 3">
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-md-4">
+                  <img src="./img/med3.jpeg" class="d-block w-100" alt="Medicine 4">
+                </div>
+                <div class="col-md-4">
+                  <img src="./img/med5.jpg" class="d-block w-100" alt="Medicine 5">
+                </div>
+                <div class="col-md-4">
+                  <img src="./img/med6.jpeg" class="d-block w-100" alt="Medicine 6">
+                </div>
               </div>
             </div>
           </div>
-          <!-- Add more carousel items if needed -->
+          <a class="carousel-control-prev" href="#medicineCarousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#medicineCarousel" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </a>
         </div>
+      </div>
+    </section>
 
-        <!-- Controls for medicine carousel -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#medicineCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#medicineCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+    <!-- Testimonials Section -->
+    <section id="testimonial" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-5">What Our Clients Say</h2>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <blockquote class="blockquote">
+                <p>"The service was amazing, my pet loved the staff!"</p>
+                <footer class="blockquote-footer">Jane Doe</footer>
+              </blockquote>
+            </div>
+            <div class="swiper-slide">
+              <blockquote class="blockquote">
+                <p>"They took such great care of my dog, highly recommended!"</p>
+                <footer class="blockquote-footer">John Smith</footer>
+              </blockquote>
+            </div>
+            <div class="swiper-slide">
+              <blockquote class="blockquote">
+                <p>"Professional and caring, my cat had the best treatment!"</p>
+                <footer class="blockquote-footer">Mary Johnson</footer>
+              </blockquote>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="service" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">Our Services</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card text-center">
+              <img src="./img/service1.jpg" class="card-img-top" alt="Service 1">
+              <div class="card-body">
+                <h5 class="card-title">Veterinary Consultations</h5>
+                <p class="card-text">Expert veterinary consultations for your pets' health.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card text-center">
+              <img src="./img/service2.jpg" class="card-img-top" alt="Service 2">
+              <div class="card-body">
+                <h5 class="card-title">Vaccinations</h5>
+                <p class="card-text">Protect your pets with essential vaccinations.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card text-center">
+              <img src="./img/service3.jpg" class="card-img-top" alt="Service 3">
+              <div class="card-body">
+                <h5 class="card-title">Surgery</h5>
+                <p class="card-text">Safe and reliable surgical procedures.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  <!-- New Services Section -->
+  <div class="container py-5 my-5">
+    <div class="row g-md-5 pt-4">
+      <div class="col-md-3 my-3">
+        <div class="card">
+          <div>
+            <iconify-icon class="service-icon text-primary" icon="la:shopping-cart"></iconify-icon>
+          </div>
+          <h3 class="card-title py-2 m-0">Free Delivery</h3>
+          <div class="card-text">
+            <p class="blog-paragraph fs-6">Lorem ipsum dolor sit amet, consectetur adipi elit.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 my-3">
+        <div class="card">
+          <div>
+            <iconify-icon class="service-icon text-primary" icon="la:user-check"></iconify-icon>
+          </div>
+          <h3 class="card-title py-2 m-0">100% secure payment</h3>
+          <div class="card-text">
+            <p class="blog-paragraph fs-6">Lorem ipsum dolor sit amet, consectetur adipi elit.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 my-3">
+        <div class="card">
+          <div>
+            <iconify-icon class="service-icon text-primary" icon="la:tag"></iconify-icon>
+          </div>
+          <h3 class="card-title py-2 m-0">Daily Offer</h3>
+          <div class="card-text">
+            <p class="blog-paragraph fs-6">Lorem ipsum dolor sit amet, consectetur adipi elit.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 my-3">
+        <div class="card">
+          <div>
+            <iconify-icon class="service-icon text-primary" icon="la:award"></iconify-icon>
+          </div>
+          <h3 class="card-title py-2 m-0">Quality guarantee</h3>
+          <div class="card-text">
+            <p class="blog-paragraph fs-6">Lorem ipsum dolor sit amet, consectetur adipi elit.</p>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- Footer Section -->
-  <footer class="text-center py-4">
-    <div class="container">
-      <p>&copy; 2024 Paws & Claws | <a href="#">Privacy Policy</a></p>
-    </div>
-  </footer>
 
-  <!-- Bootstrap JS Bundle (including Popper) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <!-- Instagram Section -->
+    <section id="insta" class="my-5">
+      <div class="row g-0 py-5">
+        <div class="col instagram-item text-center position-relative">
+          <div class="icon-overlay d-flex justify-content-center position-absolute">
+            <iconify-icon class="text-white" icon="la:instagram"></iconify-icon>
+          </div>
+          <a href="#">
+            <img src="./img/imglast1.jpg" alt="insta-img" class="img-fluid rounded-3" style="width: 600px; height: 400px;">
+          </a>
+        </div>
+        <div class="col instagram-item text-center position-relative">
+          <div class="icon-overlay d-flex justify-content-center position-absolute">
+            <iconify-icon class="text-white" icon="la:instagram"></iconify-icon>
+          </div>
+          <a href="#">
+            <img src="./img/imglast11.jpg" alt="insta-img" class="img-fluid rounded-3" style="width: 400px; height: 400px;">
 
-</html>
+          </a>
+        </div>
+        <div class="col instagram-item text-center position-relative">
+          <div class="icon-overlay d-flex justify-content-center position-absolute">
+            <iconify-icon class="text-white" icon="la:instagram"></iconify-icon>
+          </div>
+          <a href="#">
+            <img src="./img/imglast3.jpg" alt="insta-img" class="img-fluid rounded-3" style="width: 600px; height: 400px;">
+          </a>
+        </div>
+        <div class="col instagram-item text-center position-relative">
+          <div class="icon-overlay d-flex justify-content-center position-absolute">
+            <iconify-icon class="text-white" icon="la:instagram"></iconify-icon>
+          </div>
+          <a href="#">
+            <img src="./img/imglast2.jpg" alt="insta-img" class="img-fluid rounded-3" style="width: 600px; height: 400px;">
+          </a>
+        </div>
+        <div class="col instagram-item text-center position-relative">
+          <div class="icon-overlay d-flex justify-content-center position-absolute">
+            <iconify-icon class="text-white" icon="la:instagram"></iconify-icon>
+          </div>
+          <img src="./img/imglast6.jpeg" alt="insta-img" class="img-fluid rounded-3" style="width: 600px; height: 400px;">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="text-center py-4">
+      <div class="container">
+        <p class="mb-0">&copy; 2024 Paws & Claws. All Rights Reserved.</p>
+        <p class="mb-0">Follow us on 
+          <a href="#" class="text-white">Facebook</a>, 
+          <a href="#" class="text-white">Twitter</a>, 
+          <a href="#" class="text-white">Instagram</a>
+        </p>
+      </div>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper('.mySwiper', {
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      });
+    </script>
+  </body>
+
+  </html>
