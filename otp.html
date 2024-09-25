@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('./img/otpvalipic.jpg'); /* Replace with your image path */
+            background-size: cover; /* Ensures the image covers the entire viewport */
+            background-position: center; /* Centers the background image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0; /* Removes default margin */
+        }
+
+        .verifyMobileWrapper {
+            background-color: rgba(255, 255, 255, 0.9); /* Slight transparency to see the background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        .formHeader {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .registeredBase {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .registered {
+            font-size: 1em;
+        }
+
+        .otpInputWrap {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .otpInput {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            font-size: 1.5em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .buttonContainer {
+            display: flex;
+            justify-content: center;
+        }
+
+        .buttonGradient {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .buttonGradient:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .otpBottom {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .otpBottom a {
+            color: #007bff; /* Link color */
+            text-decoration: none; /* No underline */
+        }
+
+        .otpBottom a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="verifyMobileWrapper">
+    <div class="pageMainContainerVerifyOtp">
+        <div class="formHeader">Verify With OTP</div>
+        <div class="formMainContainer">
+            <div class="registeredBase">
+                <span class="registered">Enter the 4-digit code sent to your number: <span></span></span>
+            </div>
+
+            <div class="otpInputWrap">
+                <input type="tel" name="otp1" maxlength="1" class="otpInput" inputmode="numeric">
+                <input type="tel" name="otp2" maxlength="1" class="otpInput" inputmode="numeric">
+                <input type="tel" name="otp3" maxlength="1" class="otpInput" inputmode="numeric">
+                <input type="tel" name="otp4" maxlength="1" class="otpInput" inputmode="numeric">
+            </div>
+
+            <div class="verifyBtn">
+                <div class="buttonContainer">
+                    <button type="button" class="buttonGradient">Verify OTP</button>
+                </div>
+            </div>
+
+            <div class="otpBottom">
+                <a href="#">Resend</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
