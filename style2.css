@@ -69,8 +69,6 @@ h1, h2, h5 {
     color: #007bff;
 }
 
-
-
 /* Hover effect on card */
 .card:hover {
     transform: scale(1.05);
@@ -151,8 +149,5 @@ h1, h2, h5 {
     color: white;
     font-style: italic;
     background-color: grey;
-}
-
-.testimonial-blockquote footer {
-    font-weight: bold;
+    border-radius: 10%;
 }
