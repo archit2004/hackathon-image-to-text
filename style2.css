@@ -1,0 +1,32 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Hero Section Styles */
+section.bg-primary {
+    background-image: url('background.jpg'); /* Add a nice background image */
+    background-size: cover;
+    background-position: center;
+}
+
+h1, h2, h5 {
+    font-weight: bold;
+}
+
+.card-title {
+    color: #007bff;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+}
+
+/* Hover effect on card */
+.card:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
+}
