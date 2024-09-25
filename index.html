@@ -1,118 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Veterinary</title>
-  
+
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  
+
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style2.css">
 
+  <!-- Optional Bootstrap Icons (For Cart Icon) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    /* Navbar styles */
+    .navbar-nav .nav-link {
+      font-size: 1.5rem; /* Increase font size */
+      padding: 0.75rem 1.5rem; /* Increase padding for spacing */
+    }
+
+    .navbar .btn {
+      font-size: 1.2rem; /* Increase font size for buttons */
+      padding: 0.5rem 1.5rem; /* Adjust padding for buttons */
+    }
+
+    /* Hero Section Styles */
+    .hero {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero .scrolling-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .hero .scrolling-images {
+      display: flex;
+      justify-content: space-around;
+      height: 100%;
+      animation: scroll-images 10s linear infinite;
+    }
+
+    .hero .scrolling-images img {
+      opacity: 0.5;
+      width: 25%;
+      height: auto;
+    }
+
+    @keyframes scroll-images {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    h1,
+    h2,
+    h5 {
+      font-weight: bold;
+    }
+
+    .card-title {
+      color: #007bff;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+    }
+
+    /* Hover effect on card */
+    .card:hover {
+      transform: scale(1.05);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    /* Hover effect on collage images */
+    .img-fluid:hover {
+      transform: scale(1.1);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    /* Adjusting medicine image size */
+    .carousel-item img {
+      height: 250px;
+      object-fit: cover;
+    }
+
+    /* Login and Signup button positioning */
+    .navbar .ms-auto {
+      position: absolute;
+      right: 20px;
+      top: 10px;
+    }
+  </style>
 </head>
+
 <body>
   <!-- Navbar Section -->
-  <nav class="navbar navbar-light bg-light py-3">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
     <div class="container">
+      <!-- Logo and Website Name -->
       <a class="navbar-brand d-flex align-items-center" href="#">
-        <img src="https://logowik.com/content/uploads/images/free-vector-peeking-dog6477.logowik.com.webp" alt="Logo" width="80" height="65" class="d-inline-block align-top me-2">
-        <h1 class="mb-0">Veterinary</h1>
+        <img src="https://logowik.com/content/uploads/images/free-vector-peeking-dog6477.logowik.com.webp" alt="Logo" width="80" height="65" class="me-2">
+        <h1 class="mb-0 fs-4">Veterinary</h1>
       </a>
+
+      <!-- Toggler for mobile view -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar Links and Search -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto fs-5">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+        <div class="ms-auto d-flex">
+          <a href="#" class="me-2"><button class="btn btn-primary">Login</button></a>
+          <a href="#"><button class="btn btn-secondary">Signup</button></a>
+        </div>
+        <form class="d-flex ms-3">
+          <input class="form-control me-2" type="search" placeholder="Search products..." aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section class="bg-primary text-white text-center py-5">
+  <section class="bg-primary text-white text-center py-5 hero">
+    <div class="scrolling-background">
+      <div class="scrolling-images">
+        <img src="https://via.placeholder.com/300x200?text=Dog1" alt="Dog 1">
+        <img src="https://via.placeholder.com/300x200?text=Dog2" alt="Dog 2">
+        <img src="https://via.placeholder.com/300x200?text=Cat1" alt="Cat 1">
+        <img src="https://via.placeholder.com/300x200?text=Cat2" alt="Cat 2">
+      </div>
+    </div>
     <div class="container">
-      <h2 class="display-4">Care for Your Best Friend</h2>
-      <p class="lead">Your one-stop destination for dog care, food, and medicine.</p>
+      <h2 class="display-4">Care for Your Pet</h2>
+      <p class="lead">Your one-stop destination for animal care, food, and medicine.</p>
       <a href="#" class="btn btn-light btn-lg mt-3">Shop Now</a>
     </div>
   </section>
 
-  <!-- Dog Images Section -->
+  <!-- Our Beloved Animals Section -->
   <section class="py-5">
     <div class="container">
-      <h2 class="text-center mb-5">Our Beloved Dogs</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card">
-            <img src="dog1.jpg" class="card-img-top" alt="Dog 1">
-            <div class="card-body">
-              <h5 class="card-title">Happy Puppy</h5>
-              <p class="card-text">The joy of every family.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <img src="dog2.jpg" class="card-img-top" alt="Dog 2">
-            <div class="card-body">
-              <h5 class="card-title">Friendly Retriever</h5>
-              <p class="card-text">The perfect companion.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <img src="dog3.jpg" class="card-img-top" alt="Dog 3">
-            <div class="card-body">
-              <h5 class="card-title">Energetic Beagle</h5>
-              <p class="card-text">Full of love and energy.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+      <h2 class="text-center mb-5">Our Beloved Animals</h2>
 
-  <!-- Medicine Images Section -->
-  <section class="bg-light py-5">
-    <div class="container">
+      <!-- Collage of Animals -->
+      <div class="row text-center mb-5">
+        <div class="col-md-3"><img src="dog1.jpg" alt="Dog 1" class="img-fluid"></div>
+        <div class="col-md-3"><img src="dog2.jpg" alt="Dog 2" class="img-fluid"></div>
+        <div class="col-md-3"><img src="dog3.jpg" alt="Dog 3" class="img-fluid"></div>
+        <div class="col-md-3"><img src="dog4.jpg" alt="Dog 4" class="img-fluid"></div>
+      </div>
+
+      <!-- Row of dog medicines with arrows for scrolling -->
       <h2 class="text-center mb-5">Dog Medicines</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card">
-            <img src="medicine1.jpg" class="card-img-top" alt="Medicine 1">
-            <div class="card-body">
-              <h5 class="card-title">Vitamins for Dogs</h5>
-              <p class="card-text">Ensures healthy growth and vitality.</p>
+      <div id="medicineCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-md-4">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRCNCPJj1sH-YIeanbi0Iy_PQ4Nt1hCnh_RA&s" class="d-block w-100" alt="Medicine 1">
+              </div>
+              <div class="col-md-4">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU6Q8o0uoHFyGZYtJM8DIpQ6f0zc-8IzpAWQ&s" class="d-block w-100" alt="Medicine 2">
+              </div>
+              <div class="col-md-4">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjytFc3KyyNmqQK7bCNV3S6CxlKlHrqRj7rQ&s" class="d-block w-100" alt="Medicine 3">
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-4">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlZcWt9QjJDjJt8vmq23OkFcrofbQ2wV8Qrg&s" class="d-block w-100" alt="Medicine 4">
+              </div>
+              <div class="col-md-4">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIrrkt3VZTz9q2GFOeFDwFuGQHnMC-nb76Zg&s" class="d-block w-100" alt="Medicine 5">
+              </div>
+              <div class="col-md-4">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0WElz2-OYOWxTe-wnnZbKeTOhKgJ-1tUPpA&s" class="d-block w-100" alt="Medicine 6">
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card">
-            <img src="medicine2.jpg" class="card-img-top" alt="Medicine 2">
-            <div class="card-body">
-              <h5 class="card-title">Pain Relief</h5>
-              <p class="card-text">Helps relieve your dog's pain effectively.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <img src="medicine3.jpg" class="card-img-top" alt="Medicine 3">
-            <div class="card-body">
-              <h5 class="card-title">Skin & Coat Care</h5>
-              <p class="card-text">Promotes healthy skin and shiny coat.</p>
-            </div>
-          </div>
-        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#medicineCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#medicineCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
     </div>
   </section>
 
   <!-- Footer Section -->
-  <footer class="bg-dark text-white text-center py-3">
-    <div class="container">
-      <p class="mb-0">© 2024 Veterinary. All rights reserved.</p>
-    </div>
+  <footer class="text-center py-4">
+    <p>&copy; 2024 Veterinary. All rights reserved.</p>
   </footer>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap JS (with Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
+
 </html>
