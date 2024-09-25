@@ -1,12 +1,24 @@
-function filterMedicines() {
-    const filterValue = document.getElementById("petFilter").value;
-    const medicines = document.querySelectorAll(".medicine");
+function filterProducts() {
+    const checkboxes = document.querySelectorAll('.filter input[type="checkbox"]');
+    const products = document.querySelectorAll('.product');
+    const selectedPets = Array.from(checkboxes)
+                              .filter(checkbox => checkbox.checked)
+                              .map(checkbox => checkbox.value);
 
-    medicines.forEach(medicine => {
-        if (filterValue === "all" || medicine.dataset.type === filterValue) {
-            medicine.style.display = "block";
+    const minPrice = parseFloat(document.getElementById('min-price').value);
+    const maxPrice = parseFloat(document.getElementById('max-price').value);
+
+    products.forEach(product => {
+        const petType = product.getAttribute('data-pet');
+        const price = parseFloat(product.getAttribute('data-price'));
+
+        const petMatch = selectedPets.length === 0 || selectedPets.includes(petType);
+        const priceMatch = price >= minPrice && price <= maxPrice;
+
+        if (petMatch && priceMatch) {
+            product.style.display = 'block';
         } else {
-            medicine.style.display = "none";
+            product.style.display = 'none';
         }
     });
 }
